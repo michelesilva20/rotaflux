@@ -1,224 +1,204 @@
-# RotaFlux
+# RotaFlux 🚛
 
-> **Controle sua operação de transporte em tempo real.**
+> **Controle sua operação de transporte em tempo real.**  
+> Protótipo de um sistema moderno de gestão de transporte (TMS), com interface premium, dashboards operacionais e experiência pensada para eficiência logística.
 
-Sistema de Gestão de Transporte (TMS) moderno, com interface premium e UX intuitiva.
+## 🔗 Demo online
+[Acessar demonstração](https://emilabs.cloud/demo/rotaflux/)
 
-![RotaFlux Preview](https://via.placeholder.com/1200x630/2563eb/ffffff?text=RotaFlux+TMS)
+## 📸 Visão geral
 
-## 🚀 Tecnologias
+O **RotaFlux** é um protótipo frontend de um **TMS (Transportation Management System)** criado para simular uma plataforma completa de gestão de transporte, com foco em **operações**, **embarques**, **frota**, **financeiro**, **cadastros** e **relatórios**.
 
-- **React 18** + **TypeScript** + **Vite**
-- **TailwindCSS** - Estilização utilitária
-- **React Router** - Roteamento SPA
-- **TanStack Query** - Gerenciamento de estado do servidor
-- **Zustand** - Estado global leve
-- **Framer Motion** - Animações fluidas
-- **Recharts** - Gráficos e visualizações
-- **React Hook Form** + **Zod** - Formulários e validação
-- **Lucide React** - Ícones
+A proposta do projeto foi construir uma experiência de produto moderna e organizada, capaz de atender rotinas operacionais de empresas de transporte e logística com uma interface clara, intuitiva e visualmente sofisticada.
 
-## 📦 Instalação
-
-```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/rotaflux.git
-
-# Entre na pasta
-cd rotaflux
-
-# Instale as dependências
-pnpm install
-
-# Inicie o servidor de desenvolvimento
-pnpm dev
-```
-
-O projeto estará disponível em `http://localhost:5173`
-
-## 🗺️ Mapa de Rotas
-
-### Rotas Públicas
-
-| Rota | Página | Descrição |
-|------|--------|-----------|
-| `/` | Landing | Página marketing com apresentação do produto |
-| `/login` | Login | Autenticação de usuários |
-
-### Rotas Privadas (requerem login)
-
-| Rota | Página | Descrição |
-|------|--------|-----------|
-| `/app` | Dashboard | Visão geral com KPIs, gráficos e alertas |
-| `/app/operacao` | Operação | Kanban visual de embarques por status |
-| `/app/embarques` | Embarques | Lista e gestão de embarques com wizard de criação |
-| `/app/frota` | Frota | Veículos, motoristas, manutenções e abastecimentos |
-| `/app/financeiro` | Financeiro | Faturas, custos e análises financeiras |
-| `/app/cadastros` | Cadastros | Clientes, fornecedores, rotas e tabelas de preço |
-| `/app/relatorios` | Relatórios | Relatórios operacionais e exportação |
-| `/app/configuracoes` | Configurações | Perfil, empresa, preferências e usuários |
-
-## 📁 Estrutura de Pastas
-
-```
-src/
-├── components/
-│   ├── layout/          # Sidebar, Topbar, AppLayout
-│   └── ui/              # Design System (Button, Card, Modal, etc.)
-├── lib/
-│   └── utils.ts         # Funções utilitárias
-├── mocks/               # Dados mock realistas
-│   ├── customers.ts
-│   ├── drivers.ts
-│   ├── vehicles.ts
-│   ├── shipments.ts
-│   ├── invoices.ts
-│   ├── routes.ts
-│   └── dashboard.ts
-├── pages/
-│   ├── Landing.tsx      # Página marketing
-│   ├── Login.tsx        # Autenticação
-│   └── app/             # Páginas da área logada
-│       ├── Dashboard.tsx
-│       ├── Operacao.tsx
-│       ├── Embarques.tsx
-│       ├── Frota.tsx
-│       ├── Financeiro.tsx
-│       ├── Cadastros.tsx
-│       ├── Relatorios.tsx
-│       └── Configuracoes.tsx
-├── services/
-│   └── fakeApi.ts       # Simulação de API com promises
-├── store/
-│   └── index.ts         # Estado global (Zustand)
-├── types/
-│   └── index.ts         # TypeScript types e enums
-├── App.tsx              # Roteamento principal
-├── main.tsx             # Entry point
-└── index.css            # Estilos globais + Tailwind
-```
-
-## 🎨 Design System
-
-### Paleta de Cores
-
-| Nome | Valor | Uso |
-|------|-------|-----|
-| Brand/Primary | `#2563EB` | Ações principais, links, elementos de destaque |
-| Secondary | `#06B6D4` | Elementos secundários, informações |
-| Accent | `#F59E0B` | Alertas, avisos, destaques |
-| Success | `#22C55E` | Confirmações, status positivo |
-| Danger | `#EF4444` | Erros, ações destrutivas |
-
-### Tipografia
-
-- **Headings**: Sora (Google Fonts)
-- **Body/UI**: Inter (Google Fonts)
-
-### Componentes Disponíveis
-
-| Componente | Descrição |
-|------------|-----------|
-| `Button` | Botões com variantes: primary, secondary, ghost, danger, outline |
-| `Input` | Campo de texto com suporte a ícones e validação |
-| `Select` | Select estilizado com opções |
-| `Textarea` | Área de texto multilinha |
-| `Badge/StatusChip` | Badges de status com cores semânticas |
-| `Card` | Container com sombras e bordas suaves |
-| `Modal` | Diálogos modais com animação |
-| `Drawer` | Painéis laterais deslizantes |
-| `Table` | Tabela configurável com loading e empty states |
-| `Tabs` | Navegação por abas com animação |
-| `Toast` | Notificações temporárias |
-| `Skeleton` | Loading placeholders |
-| `EmptyState` | Estados vazios ilustrados |
-| `KPIStatCard` | Cards de métricas com tendência |
-| `ChartCard` | Wrapper para gráficos Recharts |
-| `PageHeader` | Cabeçalho de página com ações |
-| `Tooltip` | Dicas de contexto |
-| `DropdownMenu` | Menus dropdown |
-| `FilterBar` | Barra de filtros com chips |
-
-### Variantes de Botão
-
-```tsx
-<Button variant="primary">Primário</Button>
-<Button variant="secondary">Secundário</Button>
-<Button variant="ghost">Ghost</Button>
-<Button variant="danger">Perigo</Button>
-<Button variant="outline">Outline</Button>
-```
-
-### Tamanhos
-
-```tsx
-<Button size="sm">Pequeno</Button>
-<Button size="md">Médio</Button>
-<Button size="lg">Grande</Button>
-```
-
-## 🌙 Tema Claro/Escuro
-
-O sistema suporta modo claro e escuro. A preferência é salva no localStorage e aplicada automaticamente.
-
-Para alternar o tema programaticamente:
-
-```tsx
-import { useAppStore } from '@/store';
-
-const { setTheme } = useAppStore();
-setTheme('dark'); // 'light' | 'dark' | 'system'
-```
-
-## 📊 Dados Mock
-
-O sistema utiliza dados mock realistas para demonstração. Os dados são carregados através de uma fake API que simula latência de rede.
-
-```tsx
-import { api } from '@/services/fakeApi';
-
-// Exemplo de uso com TanStack Query
-const { data, isLoading } = useQuery({
-  queryKey: ['shipments'],
-  queryFn: api.shipments.getAll,
-});
-```
-
-## 🔐 Autenticação (Mock)
-
-Para acessar a área logada, utilize qualquer email e senha com 6+ caracteres.
-
-**Credenciais de teste:**
-- Email: `demo@rotaflux.com`
-- Senha: `demo123`
-
-## 📱 Responsividade
-
-O sistema é **desktop-first** com suporte completo a dispositivos móveis:
-- Sidebar colapsável em telas menores
-- Layouts adaptativos com grid responsivo
-- Menu mobile com navegação otimizada
-
-## ⚡ Performance
-
-- Lazy loading de componentes
-- Skeleton loading durante carregamento
-- Debounce em buscas
-- Animações otimizadas com Framer Motion
-
-## 🛠️ Scripts Disponíveis
-
-```bash
-pnpm dev      # Inicia servidor de desenvolvimento
-pnpm build    # Build de produção
-pnpm preview  # Preview do build de produção
-pnpm lint     # Verifica erros de linting
-```
-
-## 📄 Licença
-
-Este projeto é um protótipo para fins de demonstração.
+O sistema foi pensado para centralizar a operação em uma única plataforma, facilitando:
+- acompanhamento de embarques
+- visão da frota e motoristas
+- gestão financeira
+- controle de cadastros e tabelas
+- visualização de indicadores e relatórios
 
 ---
 
-Desenvolvido com ❤️ usando React + TypeScript
+## ✨ Principais funcionalidades
+
+### Área pública
+- Landing page com apresentação comercial do produto
+- Seções de recursos, diferenciais, preços e CTA
+- Interface moderna com foco em conversão
+
+### Área logada
+- Dashboard com KPIs, gráficos e alertas
+- Gestão visual da operação
+- Controle de embarques
+- Gestão de frota, motoristas e abastecimentos
+- Visão financeira da operação
+- Cadastros estratégicos do sistema
+- Relatórios e configurações
+
+---
+
+## 🧩 Módulos do sistema
+
+### Dashboard
+Visão geral da operação com métricas, gráficos, tendências e alertas relevantes para tomada de decisão.
+
+### Operação
+Kanban visual de embarques por status, permitindo acompanhar o andamento da operação de forma prática e intuitiva.
+
+### Embarques
+Listagem e gestão de embarques com fluxo estruturado para criação e acompanhamento.
+
+### Frota
+Gestão de veículos, motoristas, manutenções e abastecimentos.
+
+### Financeiro
+Controle de faturas, custos e análises financeiras relacionadas à operação.
+
+### Cadastros
+Gerenciamento de clientes, fornecedores, rotas e tabelas de preço.
+
+### Relatórios
+Visualização de relatórios operacionais com foco em análise e exportação.
+
+### Configurações
+Preferências do usuário, dados da empresa, contas e personalizações do sistema.
+
+---
+
+## 🧠 Diferenciais do projeto
+
+- Simulação realista de um produto SaaS para logística
+- Interface premium com UX intuitiva
+- Estrutura modular de fácil expansão
+- Dashboard orientado à tomada de decisão
+- Fluxo operacional visual e organizado
+- Design system consistente e reutilizável
+- Suporte a tema claro e escuro
+
+---
+
+## 👩‍💻 Meu papel no projeto
+
+Neste projeto, fui responsável por:
+- concepção do produto
+- definição da arquitetura frontend
+- design da experiência do usuário
+- criação da interface visual
+- organização de componentes e páginas
+- construção dos fluxos principais do sistema
+- simulação da experiência completa da plataforma
+
+---
+
+## 🛠️ Stack utilizada
+
+| Tecnologia | Uso |
+|------------|-----|
+| React 18 | Interface da aplicação |
+| TypeScript | Tipagem estática |
+| Vite | Build tool |
+| TailwindCSS | Estilização |
+| React Router | Navegação SPA |
+| TanStack Query | Simulação de gerenciamento de dados |
+| Zustand | Estado global |
+| Framer Motion | Animações |
+| Recharts | Gráficos e visualizações |
+| React Hook Form | Formulários |
+| Zod | Validação |
+| Lucide React | Ícones |
+
+---
+
+## 🎨 Design System
+
+### Paleta de cores
+| Nome | Valor | Uso |
+|------|-------|-----|
+| Brand / Primary | `#2563EB` | Ações principais, links e destaques |
+| Secondary | `#06B6D4` | Informações e elementos secundários |
+| Accent | `#F59E0B` | Alertas e destaques |
+| Success | `#22C55E` | Status positivos |
+| Danger | `#EF4444` | Erros e ações destrutivas |
+
+### Tipografia
+- **Headings:** Sora
+- **Body/UI:** Inter
+
+### Componentes disponíveis
+- Buttons
+- Inputs
+- Selects
+- Textareas
+- Badges e chips de status
+- Cards
+- Modals
+- Drawers
+- Tables
+- Tabs
+- Toasts
+- Skeletons
+- Empty states
+- KPI cards
+- Chart cards
+- Tooltips
+- Dropdown menus
+- Filter bars
+
+---
+
+## 🌙 Tema claro e escuro
+
+O sistema conta com suporte a **modo claro e escuro**, com preferência persistida localmente para melhorar a experiência do usuário.
+
+---
+
+## 📊 Dados mockados
+
+O projeto utiliza **dados mockados realistas** para simular o comportamento de uma aplicação real de logística.
+
+Essa camada inclui:
+- fake API com atraso artificial
+- dados fictícios para clientes, motoristas, veículos, embarques, faturas e rotas
+- integração com TanStack Query para simular carregamento de dados
+- uso de Zustand para persistência local de estados
+
+---
+
+## 🔐 Acesso à demonstração
+
+Para acessar a área logada, utilize:
+
+- **Email:** `demo@rotaflux.com`
+- **Senha:** `demo123`
+
+> Também é possível testar com qualquer email e senha contendo 6 ou mais caracteres.
+
+---
+
+## 📱 Responsividade
+
+O sistema foi pensado com abordagem **desktop-first**, mas com suporte completo a telas menores, incluindo:
+- sidebar colapsável
+- layouts responsivos
+- navegação mobile otimizada
+
+---
+
+## ⚡ Performance
+
+Algumas decisões aplicadas no projeto:
+- lazy loading de componentes
+- skeleton loading para carregamento
+- debounce em buscas
+- animações otimizadas com Framer Motion
+
+---
+
+## 🚀 Como rodar localmente
+
+```bash
+pnpm install
+pnpm dev
+pnpm build
