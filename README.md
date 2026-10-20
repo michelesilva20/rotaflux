@@ -1,3 +1,30 @@
+# RotaFlux
+
+A transport-management frontend prototype focused on operational dashboards, shipment boards and fleet/finance screens.
+
+**Status:** frontend prototype. **Stack:** React 18, TypeScript, Vite, Tailwind CSS, React Router and Zustand.
+
+## Scope and boundaries
+
+The interface uses demonstration data. Login, operational and finance screens do not establish backend authorization, live tracking, payment processing or production persistence.
+
+## Explore and run
+
+The [existing demo link](https://emilabs.cloud/demo/rotaflux/) is retained from the project documentation; hosting availability and interactive behavior must be checked separately.
+
+```sh
+pnpm install --frozen-lockfile
+pnpm dev
+```
+
+The existing `build` script performs TypeScript compilation and a Vite build. This editorial update does not establish a successful build, accessibility audit or automated test suite.
+
+## Documentação em português
+
+A apresentação original do projeto continua abaixo, com seus detalhes visuais e de navegação. As funcionalidades descritas referem-se ao protótipo.
+
+---
+
 # RotaFlux 🚛
 
 > **Controle sua operação de transporte em tempo real.**  
@@ -202,3 +229,5 @@ Algumas decisões aplicadas no projeto:
 pnpm install
 pnpm dev
 pnpm build
+
+```
